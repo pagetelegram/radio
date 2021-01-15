@@ -14,7 +14,9 @@ do
 echo > ply.pls
  find "$PWD" | grep .mp3 > ~/play.pls
  find "$PWD" | grep .mp4 >> ~/play.pls
-#sed '0~2 s/$/~/jingle/radio.mp3/g' < ply.pls > play.pls
+ find "$PWD" | grep .webm >> ~/play.pls
+ find "$PWD" | grep .mkv >> ~/play.pls
+ #sed '0~2 s/$/~/jingle/radio.mp3/g' < ply.pls > play.pls
  awk '{print}; NR%2==0 {print "/home/radio/jingle/radio.mp3"}' /home/radio/play.pls > /home/radio/ply.pls
 # find "$PWD" | grep radio.mp3 >> ~/play.pls
 
